@@ -1,0 +1,17 @@
+{
+  "medium": {
+    "xl": "80px",
+    "lg": "60px",
+    "md": "40px",
+    "sm": "32px"
+  },
+  "regular": {
+    "md": "28px",
+    "sm": "20px",
+    "xs": "16px"
+  },
+  "litle": {
+    "sm": "8px",
+    "xs": "4px"
+  }
+}
