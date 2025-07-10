@@ -10,7 +10,7 @@ interface TypographyTypeProps {
 interface TypographyTypesOptions {
   readonly dataTestId?: string
   /** Acceptable html attributes which will be rendered. */
-  readonly as: 'h1' | 'h2' | 'h3'
+  readonly as: 'h1' | 'h2' | 'h3' | 'span'
   /** Custom Object of css attributes of a typography component. */
   readonly css?: Record<string, string>
 }
@@ -37,6 +37,9 @@ const Typography: TypographyTypes = {
   },
   Header3: {
     as: 'h3'
+  },
+  Text: {
+    as: 'span'
   }
 }
 
@@ -60,6 +63,13 @@ const TypographyStyleTypes: Record<string, Record<string, Record<string, string 
       fontSize: Theme.fonts.h3.fontSize,
       fontWeight: Theme.fonts.h3.fontWeight,
       lineHeight: Theme.fonts.h3.lineHeight
+    }
+  },
+  Text: {
+    css: {
+      fontSize: Theme.fonts.text.fontSize,
+      fontWeight: Theme.fonts.text.fontWeight,
+      lineHeight: Theme.fonts.text.lineHeight
     }
   }
 }

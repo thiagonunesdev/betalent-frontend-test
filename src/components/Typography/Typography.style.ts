@@ -1,20 +1,22 @@
-import styled from 'styled-components'
+import styled, { type StyledComponent } from 'styled-components'
 
-import { Typography, TypographyStyleTypes } from '@components/Typography/Typography.type'
-import type { TypographyTypeProps } from '@components/Typography/Typography.type'
+import {
+  Typography,
+  TypographyStyleTypes,
+  type TypographyTypeProps
+} from '@components/Typography/Typography.type'
 
-const variants: Record<string, Record<string, string>> = Object.keys(Typography).reduce(
-  (ac, type) => {
-    const css = {
-      [type]: TypographyStyleTypes[type].css
-    }
-    return { ...ac, ...css }
+const variants: Record<string, Record<string, string | number>> = Object.keys(Typography).reduce(
+  (acc, type) => {
+    acc[type] = TypographyStyleTypes[type].css
+    return acc
   },
-  {}
+  {} as Record<string, Record<string, string | number>>
 )
 
-const StyledTextBase = styled.span<TypographyTypeProps>`
-  ${(props) => variants[props.textType]}
-`
+const StyledTextBase: StyledComponent<'span', object, TypographyTypeProps> =
+  styled.span<TypographyTypeProps>`
+    ${(props) => variants[props.textType]}
+  `
 
 export default StyledTextBase

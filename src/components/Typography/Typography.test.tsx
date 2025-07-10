@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 
 import { cleanup, render } from '@testing-library/react'
 
-import { H1, H2, H3 } from './Typography'
+import { H1, H2, H3, Text } from './Typography'
 
 afterEach(cleanup)
 
@@ -27,6 +27,13 @@ describe('typography', () => {
 
     expect(headings).toHaveLength(1)
     expect(headings[0]).toHaveTextContent('Hello!')
+  })
+  test('should render Text', () => {
+    const { container } = render(<Text>Hello!</Text>)
+    const texts = container.getElementsByTagName('span')
+
+    expect(texts).toHaveLength(1)
+    expect(texts[0]).toHaveTextContent('Hello!')
   })
 
   test("should not render 'textType' as an HTML attribute", () => {
@@ -53,5 +60,11 @@ describe('typography', () => {
     const headings = container.getElementsByTagName('h3')
 
     expect(headings).toHaveLength(1)
+  })
+  test('should have a attribute in Text component', () => {
+    const { container } = render(<Text>Hello!</Text>)
+    const texts = container.getElementsByTagName('span')
+
+    expect(texts).toHaveLength(1)
   })
 })

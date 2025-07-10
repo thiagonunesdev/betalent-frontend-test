@@ -1,20 +1,30 @@
 {
   "h1": {
-    "fontFamily": "Helvetica",
+    "fontFamily": "Helvetica Neue",
     "fontWeight": "500",
     "fontSize": "2rem",
-    "lineHeight": "100%"
+    "lineHeight": "100%",
+    "letter-spacing": "0%"
   },
   "h2": {
-    "fontFamily": "Helvetica",
+    "fontFamily": "Helvetica Neue",
     "fontWeight": "500",
     "fontSize": "1.6rem",
-    "lineHeight": "100%"
+    "lineHeight": "100%",
+    "letter-spacing": "0%"
   },
   "h3": {
-    "fontFamily": "Helvetica",
+    "fontFamily": "Helvetica Neue",
     "fontWeight": "400",
     "fontSize": "1.6rem",
-    "lineHeight": "100%"
+    "lineHeight": "100%",
+    "letter-spacing": "0%"
+  },
+  "text": {
+    "fontFamily": "Helvetica Neue",
+    "fontWeight": "400",
+    "fontSize": "1.6rem",
+    "lineHeight": "100%",
+    "letter-spacing": "0%"
   }
 }

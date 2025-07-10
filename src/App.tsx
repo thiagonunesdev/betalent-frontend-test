@@ -1,16 +1,17 @@
-import betalentLogo from './assets/logos/logo.svg'
-import { H1 } from './components/Typography'
+import Header from '@components/Header/Header'
 import GlobalStyles from './styles/Global.styles'
-function App() {
+import UsersPage from 'pages/Users.page'
+import { Main } from '@styles/Layout.styles'
+import type { JSX } from 'react'
+
+function App(): JSX.Element {
   return (
     <>
       <GlobalStyles />
-      <div>
-        <H1>Test</H1>
-        <a href="#" target="_blank">
-          <img src={betalentLogo} alt="Logo BeTalent" />
-        </a>
-      </div>
+      <Header />
+      <Main>
+        <UsersPage />
+      </Main>
     </>
   )
 }

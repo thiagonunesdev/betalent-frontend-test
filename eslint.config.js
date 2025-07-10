@@ -3,6 +3,7 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import prettier from 'eslint-config-prettier'
 import { globalIgnores } from 'eslint/config'
 
 export default tseslint.config([
@@ -18,7 +19,8 @@ export default tseslint.config([
     ],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser
+      globals: globals.browser,
+      sourceType: 'module'
     },
     rules: {
       'no-console': 'warn',
@@ -37,7 +39,6 @@ export default tseslint.config([
       complexity: ['warn', 10],
       'max-depth': ['warn', 4],
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-inferrable-types': 'warn'
     }
