@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { Theme } from '@theme/Theme'
+import { Theme } from '@theme/Theme';
 
-const { colors, shadows } = Theme
+const { colors, shadows } = Theme;
 
 export const HeaderStyled = styled.header`
   align-items: center;
@@ -14,4 +14,4 @@ export const HeaderStyled = styled.header`
   svg {
     margin-left: -1rem;
   }
-`
+`;

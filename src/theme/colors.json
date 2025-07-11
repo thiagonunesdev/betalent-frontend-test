@@ -1,10 +1,10 @@
 {
-    "black": "#1C1C1C",
-    "white": "#FFFFFF",
-    "blue_primary": "#0500FF",
-    "blue": "#EDEFFB",
-    "gray00": "#F0F0F0",
-    "gray05": "#F5F5F5",
-    "gray10": "#DFDFDF",
-    "gray20": "#9E9E9E"
+  "black": "#1C1C1C",
+  "white": "#FFFFFF",
+  "blue_primary": "#0500FF",
+  "blue": "#EDEFFB",
+  "gray00": "#F0F0F0",
+  "gray05": "#F5F5F5",
+  "gray10": "#DFDFDF",
+  "gray20": "#9E9E9E"
 }

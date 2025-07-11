@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css } from 'styled-components';
 
 export const ResetStyles = css`
   *,
@@ -14,11 +14,10 @@ export const ResetStyles = css`
     font-size: 62.5%;
   }
   body {
-    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.6rem;
     font-weight: 400;
     box-sizing: border-box;
-    overflow: hidden;
   }
   a,
   a:active,
@@ -31,4 +30,4 @@ export const ResetStyles = css`
   dl {
     margin-bottom: 0;
   }
-`
+`;

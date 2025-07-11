@@ -1,10 +1,15 @@
-import type { JSX } from 'react'
-import { TableWrapper, StyledTable, Thead, Th, Td, Tr } from './Table.style'
-import type { TableProps } from './Table.types'
+import LoadingTable from './components/LoadingTable';
+import { TableWrapper, StyledTable, Thead, Th, Td, Tr } from './Table.style';
+import type { TableProps } from './Table.types';
 
-const Table = <T extends object>({ columns, data }: TableProps<T>): JSX.Element => {
+const Table = <T extends object>({
+  columns,
+  data,
+  dataTestId = 'react-table',
+  isLoading = false
+}: TableProps<T>): React.ReactElement => {
   return (
-    <TableWrapper>
+    <TableWrapper data-testid={dataTestId}>
       <StyledTable>
         <Thead>
           <tr>
@@ -16,19 +21,23 @@ const Table = <T extends object>({ columns, data }: TableProps<T>): JSX.Element 
           </tr>
         </Thead>
         <tbody>
-          {data.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              {columns.map((col) => (
-                <Td key={String(col.accessor)} align={col.align}>
-                  {String(row[col.accessor])}
-                </Td>
-              ))}
-            </Tr>
-          ))}
+          {isLoading ? (
+            <LoadingTable colSpan={columns.length} />
+          ) : (
+            data.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                {columns.map((col) => (
+                  <Td key={String(col.accessor)} align={col.align}>
+                    {col.render ? col.render(row[col.accessor], row) : String(row[col.accessor])}
+                  </Td>
+                ))}
+              </Tr>
+            ))
+          )}
         </tbody>
       </StyledTable>
     </TableWrapper>
-  )
-}
+  );
+};
 
-export default Table
+export default Table;

@@ -1,6 +1,6 @@
-import { IconSearchStyled, InputWrapper, StyledInput } from './TextInput.style'
-import type { FC } from 'react'
-import type { TextInputProps } from './TextInput.type'
+import { IconSearchStyled, InputWrapper, StyledInput } from './TextInput.style';
+import type { FC } from 'react';
+import type { TextInputProps } from './TextInput.type';
 
 const TextInput: FC<TextInputProps> = ({ showSearchIcon = true, ...props }) => {
   return (
@@ -14,7 +14,7 @@ const TextInput: FC<TextInputProps> = ({ showSearchIcon = true, ...props }) => {
       />
       {showSearchIcon && <IconSearchStyled width={24} height={24} />}
     </InputWrapper>
-  )
-}
+  );
+};
 
-export default TextInput
+export default TextInput;

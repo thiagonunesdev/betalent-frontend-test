@@ -1,16 +1,16 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { Theme } from '@theme/Theme'
-import IconSearch from '@components/Icons/IconSearch'
-import type { TextInputProps } from './TextInput.type'
+import { Theme } from '@theme/Theme';
+import { IconSearch } from '@components/Icons';
+import type { TextInputProps } from './TextInput.type';
 
-const { borderRadius, colors, spaces } = Theme
+const { borderRadius, colors, shadows, spaces } = Theme;
 
 export const InputWrapper = styled.div`
   max-width: 29rem;
   position: relative;
   width: 100%;
-`
+`;
 
 export const StyledInput = styled.input<TextInputProps>`
   width: 100%;
@@ -18,16 +18,17 @@ export const StyledInput = styled.input<TextInputProps>`
   border-radius: ${borderRadius.medium};
   padding: ${spaces.regular.xs};
   padding-right: ${(props) => (props.showSearchIcon ? spaces.medium.md : spaces.regular.xs)};
+  transition: 0.2s all ease-out;
   &::placeholder {
     color: ${colors.gray20};
   }
 
   &:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0.4rem ${colors.blue_primary};
+    border-color: ${colors.blue_primary};
+    box-shadow: ${shadows.sm} ${colors.blue_primary};
     outline: none;
   }
-`
+`;
 
 export const IconSearchStyled = styled(IconSearch)`
   fill: ${colors.gray10};
@@ -36,4 +37,4 @@ export const IconSearchStyled = styled(IconSearch)`
   right: ${spaces.regular.xs};
   top: 50%;
   transform: translateY(-50%);
-`
+`;

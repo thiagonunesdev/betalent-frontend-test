@@ -1,0 +1,84 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Giovana L. Arruda",
+      "job": "Front-end",
+      "admission_date": "2019-12-02T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "/images/employees/giovana-arruda.png"
+    },
+    {
+      "id": 2,
+      "name": "Vanessa Machado",
+      "job": "Front-end",
+      "admission_date": "2020-03-12T00:00:00.000Z",
+      "phone": "5550321654789",
+      "image": "/images/employees/vanessa-machado.png"
+    },
+    {
+      "id": 3,
+      "name": "Juliana Borba",
+      "job": "Front-end",
+      "admission_date": "2020-03-15T00:00:00.000Z",
+      "phone": "5557894561230",
+      "image": "/images/employees/juliana-borba.png"
+    },
+    {
+      "id": 4,
+      "name": "Josiane Dias",
+      "job": "Front-end",
+      "admission_date": "2020-06-01T00:00:00.000Z",
+      "phone": "5557410258963",
+      "image": "/images/employees/josiane-dias.png"
+    },
+    {
+      "id": 5,
+      "name": "Reginaldo Felipe",
+      "job": "Front-end",
+      "admission_date": "2020-06-20T00:00:00.000Z",
+      "phone": "5553698520147",
+      "image": "/images/employees/reginaldo-felipe.png"
+    },
+    {
+      "id": 6,
+      "name": "Grabriel D.",
+      "job": "Back-end",
+      "admission_date": "2020-10-01T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "/images/employees/gabriel-d.png"
+    },
+    {
+      "id": 7,
+      "name": "Silvio de Carvalho",
+      "job": "Back-end",
+      "admission_date": "2021-01-01T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "/images/employees/silvio-de-carvalho.png"
+    },
+    {
+      "id": 8,
+      "name": "Ormar A. Amaral",
+      "job": "Front-end",
+      "admission_date": "2021-03-01T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "/images/employees/ormar-amaral.png"
+    },
+    {
+      "id": 10,
+      "name": "João Pedro Farias",
+      "job": "Front-end",
+      "admission_date": "2021-05-01T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "/images/employees/joao-pedro-farias.png"
+    },
+    {
+      "id": 11,
+      "name": "Caroline Rocha da Silva",
+      "job": "Back-end",
+      "admission_date": "2021-05-01T00:00:00.000Z",
+      "phone": "5551234567890",
+      "image": "/images/employees/caroline-rocha-da-silva.png"
+    }
+  ]
+}

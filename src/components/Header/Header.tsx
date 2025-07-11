@@ -1,7 +1,7 @@
-import { Container } from '@styles/Layout.styles'
-import { HeaderStyled } from './Header.style'
-import Logo from '@assets/logos/logo.svg'
-import type { JSX } from 'react'
+import { Container } from '@styles/Layout.styles';
+import { HeaderStyled } from './Header.style';
+import Logo from '@assets/logos/logo.svg';
+import type { JSX } from 'react';
 
 const Header = (): JSX.Element => {
   return (
@@ -12,7 +12,7 @@ const Header = (): JSX.Element => {
         </a>
       </Container>
     </HeaderStyled>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

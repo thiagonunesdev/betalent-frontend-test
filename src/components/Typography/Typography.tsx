@@ -1,11 +1,11 @@
-import type { FC, JSX } from 'react'
-import StyledTextBase from './Typography.style'
-import { TypographyTypeNames, Typography, type TypographyProps } from './Typography.type'
+import type { FC, JSX } from 'react';
+import StyledTextBase from './Typography.style';
+import { TypographyTypeNames, Typography, type TypographyProps } from './Typography.type';
 
 const createComponent = (componentTypeName: TypographyTypeNames): FC<TypographyProps> => {
-  const componentType = Typography[componentTypeName]
-  const StyledText = StyledTextBase.withComponent(componentType.as)
-  const props = { textType: componentTypeName }
+  const componentType = Typography[componentTypeName];
+  const StyledText = StyledTextBase.withComponent(componentType.as);
+  const props = { textType: componentTypeName };
 
   const component = ({
     children,
@@ -23,15 +23,15 @@ const createComponent = (componentTypeName: TypographyTypeNames): FC<TypographyP
       >
         {children}
       </StyledText>
-    )
-  }
-  component.displayName = componentType.as
+    );
+  };
+  component.displayName = componentType.as;
 
-  return component
-}
+  return component;
+};
 
 // create all typography components
-export const H1 = createComponent(TypographyTypeNames.Header1)
-export const H2 = createComponent(TypographyTypeNames.Header2)
-export const H3 = createComponent(TypographyTypeNames.Header3)
-export const Text = createComponent(TypographyTypeNames.Text)
+export const H1 = createComponent(TypographyTypeNames.Header1);
+export const H2 = createComponent(TypographyTypeNames.Header2);
+export const H3 = createComponent(TypographyTypeNames.Header3);
+export const Text = createComponent(TypographyTypeNames.Text);

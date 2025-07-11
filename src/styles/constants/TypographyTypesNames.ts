@@ -3,6 +3,6 @@ export const TypographyTypeNames = {
   Header2: 'Header2',
   Header3: 'Header3',
   Text: 'Text'
-} as const
+} as const;
 
-export type TypographyTypeNames = keyof typeof TypographyTypeNames
+export type TypographyTypeNames = keyof typeof TypographyTypeNames;
