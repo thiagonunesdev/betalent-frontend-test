@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-
 import { cleanup, render } from '@testing-library/react';
 
 import { H1, H2, H3, Text } from './Typography';

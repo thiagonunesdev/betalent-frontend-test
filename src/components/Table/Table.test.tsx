@@ -85,7 +85,7 @@ describe('Table component', () => {
     await user.click(firstRow);
 
     expect(screen.getByText('Job:')).toBeInTheDocument();
-    expect(screen.getByText('Developer')).toBeInTheDocument();
+    expect(screen.getByText(/Developer/i)).toBeInTheDocument();
 
     await user.click(firstRow);
 

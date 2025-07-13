@@ -63,7 +63,11 @@ const Table = <T extends { id: number | string }>({
           ) : (
             data.map((row) => (
               <React.Fragment key={row.id}>
-                <Tr $isMobile={isMobile} onClick={() => toggleRow(row.id)}>
+                <Tr
+                  $isMobile={isMobile}
+                  $isExpanded={expandedRows.includes(row.id)}
+                  onClick={() => toggleRow(row.id)}
+                >
                   {visibleColumns.map((col) => (
                     <Td key={String(col.accessor)} align={col.align} $isMobile={isMobile}>
                       {col.render ? col.render(row[col.accessor], row) : String(row[col.accessor])}
@@ -81,10 +85,15 @@ const Table = <T extends { id: number | string }>({
                 </Tr>
 
                 {isMobile && expandedRows.includes(row.id) && (
-                  <CollapseRow className="collapse-row">
-                    <CollapseTd colSpan={totalColumns} $isMobile={isMobile}>
+                  <CollapseRow>
+                    <CollapseTd
+                      colSpan={totalColumns}
+                      $isMobile={isMobile}
+                      className="collapse-row"
+                    >
                       {columns.slice(MOBILE_VISIBLE_COLUMNS).map((col) => (
                         <div key={String(col.accessor)}>
+                          {'• '}
                           <strong>{col.header}:</strong>{' '}
                           {col.render
                             ? col.render(row[col.accessor], row)

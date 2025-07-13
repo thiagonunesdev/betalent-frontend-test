@@ -12,9 +12,6 @@ const getPadding = ($isMobile?: boolean) =>
     ? `${spaces.regular.xs} 0 ${spaces.regular.xs} ${spaces.regular.xs}`
     : `${spaces.litle.sm} 0 ${spaces.litle.sm} ${spaces.medium.sm}`;
 
-const getBorderBottom = ($isMobile?: boolean) =>
-  $isMobile ? 'inherit' : `1px solid ${colors.gray10}`;
-
 export const TableWrapper = styled.div`
   width: 100%;
   overflow-x: auto;
@@ -48,20 +45,18 @@ export const Th = styled.th<{ $align?: string; $isMobile?: boolean }>`
   height: ${ROW_HEIGHT};
 `;
 
-export const Tr = styled.tr<{ $align?: string; $isMobile?: boolean }>`
+export const Tr = styled.tr<{ $align?: string; $isExpanded?: boolean; $isMobile?: boolean }>`
   background-color: ${colors.white};
   border: 1px solid ${colors.gray10};
   cursor: pointer;
   // Remove mobile border-bottom to avoid duplication
-  border-bottom: ${({ $isMobile }) => getBorderBottom($isMobile)};
+  border-bottom: ${({ $isExpanded }) => $isExpanded && 'none'};
   height: ${ROW_HEIGHT};
 `;
 
 export const Td = styled.td<{ $align?: string; $isMobile?: boolean }>`
   text-align: ${({ $align }) => $align || 'left'};
   padding: ${({ $isMobile }) => getPadding($isMobile)};
-  // Remove mobile border-bottom to avoid duplication
-  border-bottom: ${({ $isMobile }) => getBorderBottom($isMobile)};
   font-size: ${fonts.h3.fontSize};
   font-weight: ${fonts.h3.fontWeight};
 `;
