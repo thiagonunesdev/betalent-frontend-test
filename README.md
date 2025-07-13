@@ -46,7 +46,7 @@ Antes de iniciar, você precisa ter instalado:
 ### 1. Clone o repositório
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/thiagonunesdev/betalent-frontend-test.git
 cd betalent-frontend-test
 ```
 
