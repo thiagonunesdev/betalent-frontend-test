@@ -3,11 +3,15 @@ import styled from 'styled-components';
 import { Theme } from '@theme/Theme';
 import { RowFlex } from '@styles/Layout.styles';
 
-const { spaces } = Theme;
+const { breakpoints, spaces } = Theme;
 
 export const SubHeaderContent = styled(RowFlex)`
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: ${breakpoints.sm}) {
+    align-items: inherit;
+  }
 `;
 
 export const MainContent = styled(RowFlex)`
