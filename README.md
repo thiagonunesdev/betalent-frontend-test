@@ -62,7 +62,7 @@ yarn install
 yarn json-server
 ```
 
-## A API fake estará disponível em:
+A API fake estará disponível em:
 
 http://localhost:3001
 
@@ -95,19 +95,6 @@ yarn test
 | `npm run format`      | Formata o código com Prettier         |
 | `npm run test`        | Executa os testes unitários           |
 | `npm run json-server` | Inicia o backend fake com JSON Server |
-
----
-
-## Estrutura de Diretórios
-
-betalent-frontend-test
-│
-├── src/ # Código fonte do frontend
-├── db.json # Banco de dados fake do JSON Server
-├── package.json # Configuração dos scripts e dependências
-├── vite.config.ts # Configuração do Vite
-├── tsconfig.json # Configuração do Typescript
-└── README.md # Este arquivo
 
 ---
 

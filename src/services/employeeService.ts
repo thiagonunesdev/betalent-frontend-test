@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import type { Employee } from 'types/Employee';
 
 const api = axios.create({

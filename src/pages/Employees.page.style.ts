@@ -10,10 +10,16 @@ export const SubHeaderContent = styled(RowFlex)`
   justify-content: space-between;
 
   @media (max-width: ${breakpoints.sm}) {
-    align-items: inherit;
+    flex-direction: column;
+    align-items: stretch;
+    gap: ${spaces.regular.sm};
   }
 `;
 
 export const MainContent = styled(RowFlex)`
   margin-top: ${spaces.medium.sm};
+
+  @media (max-width: ${breakpoints.sm}) {
+    margin-top: ${spaces.regular.sm};
+  }
 `;

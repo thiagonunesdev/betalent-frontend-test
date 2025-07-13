@@ -1,17 +1,32 @@
-import { IconSearchStyled, InputWrapper, StyledInput } from './TextInput.style';
 import type { FC } from 'react';
+
+import { ClearButton, IconSearchStyled, InputWrapper, StyledInput } from './TextInput.style';
 import type { TextInputProps } from './TextInput.type';
 
-const TextInput: FC<TextInputProps> = ({ showSearchIcon = true, ...props }) => {
+const TextInput: FC<TextInputProps> = ({
+  onChange,
+  onClear,
+  showSearchIcon = true,
+  value = '',
+  ...props
+}) => {
   return (
     <InputWrapper>
       <StyledInput
-        id="text-input"
         data-testid="text-input"
-        type="text"
+        hasClear={Boolean(value)}
+        id="text-input"
+        onChange={onChange}
         showSearchIcon={showSearchIcon}
+        type="text"
+        value={value}
         {...props}
       />
+      {value && (
+        <ClearButton type="button" onClick={onClear} data-testid="clear-input">
+          ×
+        </ClearButton>
+      )}
       {showSearchIcon && <IconSearchStyled width={24} height={24} />}
     </InputWrapper>
   );

@@ -24,6 +24,7 @@ const UsersPage = (): JSX.Element => {
         <TextInput
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onClear={() => setInput('')}
           placeholder={'Pesquisar'}
         />
       </SubHeaderContent>

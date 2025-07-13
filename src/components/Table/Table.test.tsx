@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { vi } from 'vitest';
+import { vi, type Mock } from 'vitest';
 
 import Table from './Table';
 import type { Column } from './Table.types';
+import userEvent from '@testing-library/user-event';
+import { useIsMobile } from './useMobile';
 
 // Mock loading component
 vi.mock('./components/LoadingTable', () => ({
@@ -11,6 +13,10 @@ vi.mock('./components/LoadingTable', () => ({
       <td colSpan={colSpan}>Loading...</td>
     </tr>
   )
+}));
+
+vi.mock('./useMobile', () => ({
+  useIsMobile: vi.fn()
 }));
 
 type TestData = { id: number; name: string; job: string };
@@ -27,6 +33,10 @@ const data: TestData[] = [
 ];
 
 describe('Table component', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it('renders table headers based on columns', () => {
     render(<Table columns={columns} data={[]} />);
     columns.forEach((col) => {
@@ -62,5 +72,23 @@ describe('Table component', () => {
     const customData = [{ id: 1, name: 'Alice', job: 'Dev' }];
     render(<Table columns={customColumns} data={customData} />);
     expect(screen.getByTestId('custom-render')).toHaveTextContent('ALICE');
+  });
+  it('should expand and collapse row content in mobile mode', async () => {
+    (useIsMobile as Mock).mockReturnValue(true);
+    const user = userEvent.setup();
+
+    render(<Table columns={columns} data={data} />);
+
+    expect(screen.queryByText(/Job:/i)).not.toBeInTheDocument();
+
+    const firstRow = screen.getByText('Alice').closest('tr')!;
+    await user.click(firstRow);
+
+    expect(screen.getByText('Job:')).toBeInTheDocument();
+    expect(screen.getByText('Developer')).toBeInTheDocument();
+
+    await user.click(firstRow);
+
+    expect(screen.queryByText('Job:')).not.toBeInTheDocument();
   });
 });

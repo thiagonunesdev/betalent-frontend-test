@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { vi } from 'vitest';
+import { vi, type Mock } from 'vitest';
 
 import { useEmployeeById } from 'hooks/useEmployees';
 import Avatar from './Avatar';
@@ -9,7 +9,7 @@ vi.mock('hooks/useEmployees', () => ({
 }));
 
 describe('Avatar component', () => {
-  const mockedUseEmployeeById = useEmployeeById as unknown as ReturnType<typeof vi.fn>;
+  const mockedUseEmployeeById = useEmployeeById as Mock;
 
   afterEach(() => {
     vi.clearAllMocks();
