@@ -86,15 +86,15 @@ yarn test
 
 # Scripts Disponíveis
 
-| Comando               | Descrição                             |
-| --------------------- | ------------------------------------- |
-| `npm run dev`         | Inicia o frontend com Vite            |
-| `npm run build`       | Gera o build de produção              |
-| `npm run preview`     | Visualiza o build em modo preview     |
-| `npm run lint`        | Verifica problemas de lint            |
-| `npm run format`      | Formata o código com Prettier         |
-| `npm run test`        | Executa os testes unitários           |
-| `npm run json-server` | Inicia o backend fake com JSON Server |
+| Comando            | Descrição                             |
+| ------------------ | ------------------------------------- |
+| `yarn dev`         | Inicia o frontend com Vite            |
+| `yarn build`       | Gera o build de produção              |
+| `yarn preview`     | Visualiza o build em modo preview     |
+| `yarn lint`        | Verifica problemas de lint            |
+| `yarn format`      | Formata o código com Prettier         |
+| `yarn test`        | Executa os testes unitários           |
+| `yarn json-server` | Inicia o backend fake com JSON Server |
 
 ---
 
